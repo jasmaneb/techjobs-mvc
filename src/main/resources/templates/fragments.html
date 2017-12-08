@@ -26,6 +26,18 @@
             </div>
         </div>
     </div>
+    <div th:fragment="search-list">
+    <div th:if="${jobs != null}">
+        <table>
+            <tbody th:each="job : ${jobs}">
+            <tr th:each="property : ${job}">
+                <td th:text="${property}"></td>
+                <td th:text="${job.get(property)}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
 
 </body>
 </html>
